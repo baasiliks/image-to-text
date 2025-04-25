@@ -176,36 +176,40 @@
 </div>
 
 <script>
-  let clickCountConvert = 0;
-  let clickCountCopy = 0;
+ // Mendeklarasikan variabel klik
+let clickCountConvert = 0;
+let clickCountCopy = 0;
 
-  // Function for handling "Convert" button
-  function handleConvertButtonClick() {
-    clickCountConvert++;
+// Function for handling "Convert" button click
+function handleConvertButtonClick() {
+  clickCountConvert++;
 
-    if (clickCountConvert === 1) {
-      // Tampilkan iklan pada klik pertama
-      window.open("https://rethinkexercisesupplement.com/zec8sb8itk?key=17de33cc5076d2b00ecf8ab4e29a960a", "_blank");
-      alert("Terima kasih telah mengeklik! Klik lagi untuk melanjutkan konversi.");
-    } else if (clickCountConvert === 2) {
-      // Proses konversi gambar ke teks pada klik kedua
-      extractText();
-    }
+  if (clickCountConvert === 1) {
+    // Tampilkan iklan pada klik pertama
+    window.open("https://rethinkexercisesupplement.com/zec8sb8itk?key=17de33cc5076d2b00ecf8ab4e29a960a", "_blank");
+    alert("Terima kasih telah mengeklik! Klik lagi untuk melanjutkan konversi.");
+  } else if (clickCountConvert === 2) {
+    // Proses konversi gambar ke teks pada klik kedua
+    extractText(); // Pastikan fungsi ini sudah ada
+    clickCountConvert = 0; // Reset count setelah konversi selesai
   }
+}
 
-  // Function for handling "Copy" button
-  function handleCopyButtonClick() {
-    clickCountCopy++;
+// Function for handling "Copy" button click
+function handleCopyButtonClick() {
+  clickCountCopy++;
 
-    if (clickCountCopy === 1) {
-      // Tampilkan iklan pada klik pertama
-      window.open("https://rethinkexercisesupplement.com/zec8sb8itk?key=17de33cc5076d2b00ecf8ab4e29a960a", "_blank");
-      alert("Terima kasih telah mengeklik! Klik lagi untuk menyalin teks.");
-    } else if (clickCountCopy === 2) {
-      // Menyalin teks ke clipboard pada klik kedua
-      copyText();
-    }
+  if (clickCountCopy === 1) {
+    // Tampilkan iklan pada klik pertama
+    window.open("https://rethinkexercisesupplement.com/zec8sb8itk?key=17de33cc5076d2b00ecf8ab4e29a960a", "_blank");
+    alert("Terima kasih telah mengeklik! Klik lagi untuk menyalin teks.");
+  } else if (clickCountCopy === 2) {
+    // Menyalin teks ke clipboard pada klik kedua
+    copyText(); // Pastikan fungsi ini sudah ada
+    clickCountCopy = 0; // Reset count setelah teks disalin
   }
+}
+
 
   // Function to extract text from image using Tesseract.js
   function extractText() {
