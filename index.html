@@ -160,7 +160,7 @@
     </div>
 
     <div class="form-group">
-      <button onclick="extractText()">Ekstrak Teks</button>
+      <button onclick="handleConvertButtonClick()">Ekstrak Teks</button>
     </div>
 
     <div id="output">
@@ -168,7 +168,7 @@
     </div>
 
     <div class="form-group">
-      <button onclick="copyText()">Salin Teks</button>
+      <button onclick="handleCopyButtonClick()">Salin Teks</button>
     </div>
   </div>
 
@@ -176,6 +176,38 @@
 </div>
 
 <script>
+  let clickCountConvert = 0;
+  let clickCountCopy = 0;
+
+  // Function for handling "Convert" button
+  function handleConvertButtonClick() {
+    clickCountConvert++;
+
+    if (clickCountConvert === 1) {
+      // Tampilkan iklan pada klik pertama
+      window.open("https://rethinkexercisesupplement.com/zec8sb8itk?key=17de33cc5076d2b00ecf8ab4e29a960a", "_blank");
+      alert("Terima kasih telah mengeklik! Klik lagi untuk melanjutkan konversi.");
+    } else if (clickCountConvert === 2) {
+      // Proses konversi gambar ke teks pada klik kedua
+      extractText();
+    }
+  }
+
+  // Function for handling "Copy" button
+  function handleCopyButtonClick() {
+    clickCountCopy++;
+
+    if (clickCountCopy === 1) {
+      // Tampilkan iklan pada klik pertama
+      window.open("https://rethinkexercisesupplement.com/zec8sb8itk?key=17de33cc5076d2b00ecf8ab4e29a960a", "_blank");
+      alert("Terima kasih telah mengeklik! Klik lagi untuk menyalin teks.");
+    } else if (clickCountCopy === 2) {
+      // Menyalin teks ke clipboard pada klik kedua
+      copyText();
+    }
+  }
+
+  // Function to extract text from image using Tesseract.js
   function extractText() {
     const image = document.getElementById("imageInput").files[0];
     if (!image) {
@@ -190,6 +222,7 @@
     });
   }
 
+  // Function to copy text to clipboard
   function copyText() {
     const text = document.getElementById("output").textContent;
     navigator.clipboard.writeText(text).then(() => {
